@@ -1,0 +1,7 @@
+site_name: Docs
+repo_url: https://github.com/ONGOING-Z/docs
+
+theme:
+    name: material
+plugins:
+    - search
