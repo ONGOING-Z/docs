@@ -1,0 +1,1003 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
+    
+    
+      
+        <title>Git - Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9299cb39.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#git" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Docs" class="md-header__button md-logo" aria-label="Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Git
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/ONGOING-Z/docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Docs" class="md-nav__button md-logo" aria-label="Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/ONGOING-Z/docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Git
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git_1" class="md-nav__link">
+    Git
+  </a>
+  
+    <nav class="md-nav" aria-label="Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-git" class="md-nav__link">
+    1. git 查看修改用户名与密码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-git" class="md-nav__link">
+    2. git 本地与远程仓库关联与解除
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-github" class="md-nav__link">
+    3. GitHub快速更换绑定邮箱
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-git" class="md-nav__link">
+    4. git 推送
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-github" class="md-nav__link">
+    5. github 如何删除仓库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 查看本地与远程的连接
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7. 在本地配置公钥
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8. 重命名
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-github" class="md-nav__link">
+    9. github刷新
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-git" class="md-nav__link">
+    10. git基本操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-gitadd" class="md-nav__link">
+    11. git删除add中的文件（缓存文件）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-gitpush" class="md-nav__link">
+    12. Git每次push都需要输入用户名与密码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    发现github上的绿色格子几天没有亮了
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-status" class="md-nav__link">
+    git status显示中文乱码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit" class="md-nav__link">
+    重写最后一个commit信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-rm" class="md-nav__link">
+    恢复git rm的文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-clone" class="md-nav__link">
+    大大减少git clone下载数据量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitignore" class="md-nav__link">
+    .gitignore文件配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-log" class="md-nav__link">
+    git log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-commit" class="md-nav__link">
+    Git commit 规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git_2" class="md-nav__link">
+    git获取更新到本地仓库
+  </a>
+  
+    <nav class="md-nav" aria-label="git获取更新到本地仓库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    查看远程分支
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    从远程分支获取最新版本到本地
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temp" class="md-nav__link">
+    比较temp和本地仓库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    更新本地仓库
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../latex/" class="md-nav__link">
+        Latex
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux-shell/" class="md-nav__link">
+        Linux shell
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git_1" class="md-nav__link">
+    Git
+  </a>
+  
+    <nav class="md-nav" aria-label="Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-git" class="md-nav__link">
+    1. git 查看修改用户名与密码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-git" class="md-nav__link">
+    2. git 本地与远程仓库关联与解除
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-github" class="md-nav__link">
+    3. GitHub快速更换绑定邮箱
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-git" class="md-nav__link">
+    4. git 推送
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-github" class="md-nav__link">
+    5. github 如何删除仓库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 查看本地与远程的连接
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7. 在本地配置公钥
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8. 重命名
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-github" class="md-nav__link">
+    9. github刷新
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-git" class="md-nav__link">
+    10. git基本操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-gitadd" class="md-nav__link">
+    11. git删除add中的文件（缓存文件）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-gitpush" class="md-nav__link">
+    12. Git每次push都需要输入用户名与密码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    发现github上的绿色格子几天没有亮了
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-status" class="md-nav__link">
+    git status显示中文乱码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit" class="md-nav__link">
+    重写最后一个commit信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-rm" class="md-nav__link">
+    恢复git rm的文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-clone" class="md-nav__link">
+    大大减少git clone下载数据量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitignore" class="md-nav__link">
+    .gitignore文件配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-log" class="md-nav__link">
+    git log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-commit" class="md-nav__link">
+    Git commit 规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git_2" class="md-nav__link">
+    git获取更新到本地仓库
+  </a>
+  
+    <nav class="md-nav" aria-label="git获取更新到本地仓库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    查看远程分支
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    从远程分支获取最新版本到本地
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temp" class="md-nav__link">
+    比较temp和本地仓库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    更新本地仓库
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ONGOING-Z/docs/edit/master/docs/git.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="git">Git</h1>
+<div class="toc">
+<ul>
+<li><a href="#git">Git</a><ul>
+<li><a href="#git_1">Git</a><ul>
+<li><a href="#1-git">1. git 查看修改用户名与密码</a></li>
+<li><a href="#2-git">2. git 本地与远程仓库关联与解除</a></li>
+<li><a href="#3-github">3. GitHub快速更换绑定邮箱</a></li>
+<li><a href="#4-git">4. git 推送</a></li>
+<li><a href="#5-github">5. github 如何删除仓库</a></li>
+<li><a href="#6">6. 查看本地与远程的连接</a></li>
+<li><a href="#7">7. 在本地配置公钥</a></li>
+<li><a href="#8">8. 重命名</a></li>
+<li><a href="#9-github">9. github刷新</a></li>
+<li><a href="#10-git">10. git基本操作</a></li>
+<li><a href="#11-gitadd">11. git删除add中的文件（缓存文件）</a></li>
+<li><a href="#12-gitpush">12. Git每次push都需要输入用户名与密码</a></li>
+<li><a href="#github">发现github上的绿色格子几天没有亮了</a></li>
+<li><a href="#git-status">git status显示中文乱码</a></li>
+<li><a href="#commit">重写最后一个commit信息</a></li>
+<li><a href="#git-rm">恢复git rm的文件</a></li>
+<li><a href="#git-clone">大大减少git clone下载数据量</a></li>
+<li><a href="#gitignore">.gitignore文件配置</a></li>
+<li><a href="#git-log">git log</a></li>
+<li><a href="#git-commit">Git commit 规范</a></li>
+<li><a href="#git_2">git获取更新到本地仓库</a><ul>
+<li><a href="#_1">查看远程分支</a></li>
+<li><a href="#_2">从远程分支获取最新版本到本地</a></li>
+<li><a href="#temp">比较temp和本地仓库</a></li>
+<li><a href="#_3">更新本地仓库</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Git的一些基本使用</p>
+<h2 id="git_1">Git</h2>
+<h3 id="1-git">1. git 查看修改用户名与密码</h3>
+<ul>
+<li>查看用户名</li>
+</ul>
+<pre><code class="language-git">git config --global user.name
+</code></pre>
+<ul>
+<li>修改用户名</li>
+</ul>
+<pre><code class="language-git">git config --global user.name &quot;your name&quot;
+</code></pre>
+<ul>
+<li>查看邮箱地址</li>
+</ul>
+<pre><code class="language-git">git config --global user.email
+</code></pre>
+<ul>
+<li>修改邮箱地址</li>
+</ul>
+<pre><code class="language-git">git config --global user.email &quot;your email address&quot;
+</code></pre>
+<h3 id="2-git">2. git 本地与远程仓库关联与解除</h3>
+<ul>
+<li>查看远程仓库信息</li>
+</ul>
+<pre><code class="language-git">git remote -v
+</code></pre>
+<ul>
+<li>建立新仓库</li>
+</ul>
+<pre><code class="language-git">在github中建立一个新的仓库
+可以不要README.md文件
+</code></pre>
+<ul>
+<li>关联</li>
+</ul>
+<pre><code class="language-git">git remote add origin git@github.com:your_name/repository_name.git
+</code></pre>
+<ul>
+<li>解除关联</li>
+</ul>
+<pre><code class="language-bash">git remote remove origin
+</code></pre>
+<h3 id="3-github">3. GitHub快速更换绑定邮箱</h3>
+<p>(1)点击头像
+(2)setting
+(3)Email
+(4)Add email address
+(5)新邮箱验证，返回github，将新邮箱验证Set Primary.</p>
+<h3 id="4-git">4. git 推送</h3>
+<pre><code class="language-git">git push -u origin master
+</code></pre>
+<h3 id="5-github">5. github 如何删除仓库</h3>
+<p>（1）settings
+（2）页面最下方'Delete this repository'</p>
+<h3 id="6">6. 查看本地与远程的连接</h3>
+<pre><code class="language-bash">ssh -T git@github.com
+</code></pre>
+<h3 id="7">7. 在本地配置公钥</h3>
+<pre><code class="language-bash">ssh-keygen -t rsa -C email_address
+</code></pre>
+<h3 id="8">8. 重命名</h3>
+<ul>
+<li>
+<p>git mv: move or rename a file, a directory.</p>
+</li>
+<li>
+<p>description</p>
+</li>
+</ul>
+<pre><code class="language-bash">git mv &lt;source&gt; &lt;destination&gt;
+git mv &lt;source&gt; &lt;destination directory&gt;
+</code></pre>
+<p><em>暂时还没看懂重命名文件夹是怎么做的。</em></p>
+<h3 id="9-github">9. github刷新</h3>
+<p>在自己电脑本地<code>push</code>完文件后，想要在github中看看效果，</p>
+<p><em>不要直接按F5进行整个网页的刷新</em>，</p>
+<p>点击自己<strong>仓库的名称链接</strong>进行刷新，这样会比较快。</p>
+<h3 id="10-git">10. git基本操作</h3>
+<pre><code class="language-bash"># 初始化仓库
+git init
+# 取消初始化仓库
+rm -rf .git/
+# 查看仓库状态（哪些文件提交了，哪些文件未提交）
+git status
+# 添加文件至提交列表
+git add filename
+## 同时添加多个文件
+git add filename1 filename2 (中间以空格区分)
+</code></pre>
+<h3 id="11-gitadd">11. git删除add中的文件（缓存文件）</h3>
+<pre><code class="language-bash">git rm --cached file_name
+</code></pre>
+<h3 id="12-gitpush">12. Git每次push都需要输入用户名与密码</h3>
+<p>首先，如果我们git clone的下载代码的时候是连接的<code>https://而不是git@git</code> (ssh)的形
+式，当我们操作git pull/push到远程的时候，总是提示我们输入账号和密码才能操作成功
+，频繁的输入账号和密码会很麻烦，也特别烦恼。</p>
+<p>解决办法</p>
+<pre><code class="language-bash">git bash进入你的项目目录，输入:
+git config --global credential.helper store
+</code></pre>
+<p>此项会在本地生成一个文本，上边记录你的账号和密码。</p>
+<p>然后你使用上述的命令配置好之后，再操作一次git pull，然后它会提示你输入账号密码
+，这一次之后就不需要再次输入密码了。</p>
+<h3 id="github">发现github上的绿色格子几天没有亮了</h3>
+<p>原因：之前github的邮箱更换了，但是本地主机的邮箱忘记更换。</p>
+<p>使用<code>git config user.email</code>查看是否和github上保留的邮箱是否一致，</p>
+<p>如果不一致，使用<code>git config user.email "your_address”</code>进行本地邮箱的更换。</p>
+<p>以上，完毕。</p>
+<h3 id="git-status">git status显示中文乱码</h3>
+<p>解决办法：<code>git config --global core.quotepath false</code></p>
+<h3 id="commit">重写最后一个commit信息</h3>
+<pre><code class="language-bash">git commit --amend
+</code></pre>
+<h3 id="git-rm">恢复git rm的文件</h3>
+<p>First in the bash: <code>git reset</code>
+And second: <code>git checkout the_file_deleted</code></p>
+<h3 id="git-clone">大大减少git clone下载数据量</h3>
+<pre><code class="language-bash">git clone --depth=1
+</code></pre>
+<h3 id="gitignore">.gitignore文件配置</h3>
+<ol>
+<li>文件作用: 告诉git哪些文件是不需要管理的.</li>
+<li>
+<p>配置语法</p>
+<p><code>text
+/开头表示目录
+*开头通配
+?单个字符
+!不忽略某个文件或是目录</code></p>
+</li>
+<li>
+<p>需要自己创建.gitignore文件</p>
+</li>
+</ol>
+<p>注意:</p>
+<pre><code class="language-text">最后需要强调的一点是，如果你不慎在创建.gitignore文件之前就push了项目，那么即使你在.gitignore文件中写入新的过滤规则，这些规则也不会起作用，Git仍然会对所有文件进行版本管理。
+简单来说，出现这种问题的原因就是Git已经开始管理这些文件了，所以你无法再通过过滤规则过滤它们。因此一定要养成在项目开始就创建.gitignore文件的习惯，否则一旦push，处理起来会非常麻烦。
+
+From: https://www.jianshu.com/p/699ed86028c2
+</code></pre>
+<h3 id="git-log">git log</h3>
+<p>查看提交历史。</p>
+<p>简洁的查看: <code>git log --oneline</code></p>
+<p>或者使用<code>git reflog</code>,这个每一行都有一个编号。</p>
+<h3 id="git-commit">Git commit 规范</h3>
+<ol>
+<li>好的提交信息应该是一个完整的句子。</li>
+<li>首字母要大写!</li>
+</ol>
+<h3 id="git_2">git获取更新到本地仓库</h3>
+<h4 id="_1">查看远程分支</h4>
+<pre><code class="language-bash">git remote -v
+</code></pre>
+<h4 id="_2">从远程分支获取最新版本到本地</h4>
+<pre><code class="language-bash">git fetch origin master:temp
+</code></pre>
+<p>在本地新建一个temp分支，并将远程仓库的master分支的代码下载到本地分支上面</p>
+<h4 id="temp">比较temp和本地仓库</h4>
+<pre><code class="language-bash">git diff temp
+</code></pre>
+<h4 id="_3">更新本地仓库</h4>
+<p>确认修改之处后就可以更新本地仓库了，使用<code>git merge temp</code>即可更新本地仓库。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../about/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              About
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../latex/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Latex
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.7353b375.min.js"></script>
+      
+    
+  </body>
+</html>
